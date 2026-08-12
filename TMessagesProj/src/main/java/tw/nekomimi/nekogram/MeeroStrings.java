@@ -4,26 +4,20 @@ import java.util.HashMap;
 import java.util.Locale;
 
 /**
- * MeeroX v171 - every MeeroX feature string (names, descriptions,
- * dialogs...) relocated OUT of resources.arsc INTO the encrypted DEX
- * vault (this class ships only inside assets/meero_vault/dex.enc).
- *
- * Before v171 these 455 strings sat in res values dirs (values +
- * values-ar)/strings_meerox.xml, readable by any static-analysis /
- * unpack tool via the resource table. Now the resource dump shows
- * NOTHING about MeeroX features.
- *
- * Generated from strings_meerox.xml exactly (values preserved 1:1 with
- * android unescaping applied) - do not edit by hand, regenerate.
+ * MeeroX - جميع النصوص المفكوكة مع ربط الأرقام
+ * هذه النسخة تحتوي على جميع المفاتيح (472) مع دعم الأرقام
  */
 public final class MeeroStrings {
 
     private MeeroStrings() {
     }
 
-    /** key -> { english, arabic (nullable) } */
-    private static final HashMap<String, String[]> MAP = new HashMap<String, String[]>();
-
+    // ============================================================
+    // جميع النصوص - المفتاح -> [إنجليزي, عربي]
+    // ============================================================
+    
+    private static final HashMap<String, String[]> STRINGS = new HashMap<>();
+    
     static {
         put("BackAnimationIos", "iOS", "آي أو إس");
         put("JanitorDays14", "14 days", "14 يوم");
@@ -32,8 +26,8 @@ public final class MeeroStrings {
         put("JanitorModeDaily", "Daily", "يومي");
         put("JanitorModeLimit", "Only when over the limit", "فقط عند تجاوز الحد");
         put("JanitorModeWeekly", "Weekly", "أسبوعي");
-        put("JanitorReport", "Storage janitor freed %1$s of cache", "حارس التخزين حرّر %1$s من الكاش");
-        put("MeeroAmoledBubblesInfo", "On dark themes with a pure-black background, incoming bubbles turn true #000000 black for contrast and battery saving. OFF restores the theme colors.", "مع الثيمات الداكنة ذات الخلفية السوداء الخالصة، فقاعات الطرف الثاني تصير سوداء 100% (#000000) للتباين وتوفير البطارية. الإطفاء يرجّع ألوان الثيم.");
+        put("JanitorReport", "Storage janitor freed %251$s of cache", "حارس التخزين حرّر %251$s من الكاش");
+        put("MeeroAmoledBubblesInfo", "On dark themes with a pure-black background, incoming bubbles turn true #000000 black for contrast and battery saving. OFF restores the theme colors.", "مع الثيمات الداكنة ذات الخلفية السوداء الخالصة، فقاعات الطرف الثاني تصير سوداء 100%25 (#000000) للتباين وتوفير البطارية. الإطفاء يرجّع ألوان الثيم.");
         put("MeeroAmoledStrokeInfo", "Draws a barely-there 1px outline around pure-black incoming bubbles so their borders stay visible on true-black backgrounds. Works only while AMOLED black bubbles is on.", "يرسم خطاً خافتاً جداً بسماكة 1px حول فقاعات الطرف الثاني السوداء الخالصة حتى تبقى حدودها واضحة على الخلفية السوداء الحقيقية. يشتغل فقط إذا خيار «فقاعات سوداء AMOLED» شغّال.");
         put("MeeroAppEdition", "App edition", "إصدار التطبيق");
         put("MeeroAuditChat", "Locked chat", "محادثة مقفلة");
@@ -52,7 +46,7 @@ public final class MeeroStrings {
         put("MeeroAutoReplyText", "Reply text", "نص الرد");
         put("MeeroAutoReplyTextHint", "Write {name} and it becomes the person's name", "اكتب {name} وتنحط اسم الشخص مكانها");
         put("MeeroAutoReplyTitle", "Auto-reply", "الرد التلقائي");
-        put("MeeroAutoReplyUsage", "How it works: automatically sends one reply to incoming messages in private chats while you are busy, with a per-chat cooldown so it never becomes spam. Off by default - and while off, nothing is ever sent, exactly the stock behavior.\n\n⏰ Time window: when enabled, replies are only sent within these hours on the chosen days. If the start is later than the end, the window crosses midnight (e.g. 23:00-08:00). Outside the window (or on unchecked days) nothing is sent. Off = replies around the clock, exactly like before. The optional night text replaces the general reply text while the window is active.\n\n✅ Guarantees: private chats only - groups, channels, bots and your Saved Messages are always excluded. Never replies while you are inside that same chat with the screen on. Works in the background after you leave the app (a device \"Force stop\" kills everything - that is Android law). With Ghost Mode: the reply is sent without any read receipt, so the other side's read ticks stay unchanged. The cooldown is kept in memory and resets when the app restarts.", "شلون تشتغل: يرد تلقائيًا برسالة واحدة على الرسائل الجديدة في الدردشات الخاصة وأنت مشغول، مع فاصل زمني لكل دردشة حتى لا يتحول لسبام. مطفي افتراضيًا — وعند إطفائه ما ينرسل أي شيء، سلوك رسمي تمامًا.\n\n⏰ النافذة الزمنية: عند التفعيل يُرسل الرد فقط داخل هاي الساعات وبالأيام المختارة. إذا البداية بعد النهاية فالنافذة تعبر منتصف الليل (مثال 23:00–08:00). خارج النافذة أو بيوم غير محدد ما ينرسل رد. مطفية = يرد على مدار الساعة مثل السابق. «النص الليلي» الاختياري يستبدل نص الرد العادي داخل النافذة فقط.\n\n✅ الضمانات: الدردشات الخاصة فقط — القروبات والقنوات والبوتات ورسائلك المحفوظة مستبعدة دائمًا. لا يرد وأنت داخل نفس الدردشة والشاشة شغالة. يعمل بالخلفية ولو خرجت من التطبيق («الإيقاف الإجباري» من إعدادات الجهاز يطفي كل شيء — قانون أندرويد). مع وضع الشبح: الرد ينرسل بدون إيصال قراءة، فصحات القراءة عند الطرف الثاني ما تتغير. الفاصل الزمني ينحفظ بالذاكرة وينصفّر عند إعادة تشغيل التطبيق.");
+        put("MeeroAutoReplyUsage", "How it works: automatically sends one reply to incoming messages in private chats while you are busy, with a per-chat cooldown so it never becomes spam. Off by default - and while off, nothing is ever sent, exactly the stock behavior.%0A%0A⏰ Time window: when enabled, replies are only sent within these hours on the chosen days. If the start is later than the end, the window crosses midnight (e.g. 23:00-08:00). Outside the window (or on unchecked days) nothing is sent. Off = replies around the clock, exactly like before. The optional night text replaces the general reply text while the window is active.%0A%0A✅ Guarantees: private chats only - groups, channels, bots and your Saved Messages are always excluded. Never replies while you are inside that same chat with the screen on. Works in the background after you leave the app (a device \"Force stop\" kills everything - that is Android law). With Ghost Mode: the reply is sent without any read receipt, so the other side's read ticks stay unchanged. The cooldown is kept in memory and resets when the app restarts.", "شلون تشتغل: يرد تلقائيًا برسالة واحدة على الرسائل الجديدة في الدردشات الخاصة وأنت مشغول، مع فاصل زمني لكل دردشة حتى لا يتحول لسبام. مطفي افتراضيًا — وعند إطفائه ما ينرسل أي شيء، سلوك رسمي تمامًا.%0A%0A⏰ النافذة الزمنية: عند التفعيل يُرسل الرد فقط داخل هاي الساعات وبالأيام المختارة. إذا البداية بعد النهاية فالنافذة تعبر منتصف الليل (مثال 23:00–08:00). خارج النافذة أو بيوم غير محدد ما ينرسل رد. مطفية = يرد على مدار الساعة مثل السابق. «النص الليلي» الاختياري يستبدل نص الرد العادي داخل النافذة فقط.%0A%0A✅ الضمانات: الدردشات الخاصة فقط — القروبات والقنوات والبوتات ورسائلك المحفوظة مستبعدة دائمًا. لا يرد وأنت داخل نفس الدردشة والشاشة شغالة. يعمل بالخلفية ولو خرجت من التطبيق («الإيقاف الإجباري» من إعدادات الجهاز يطفي كل شيء — قانون أندرويد). مع وضع الشبح: الرد ينرسل بدون إيصال قراءة، فصحات القراءة عند الطرف الثاني ما تتغير. الفاصل الزمني ينحفظ بالذاكرة وينصفّر عند إعادة تشغيل التطبيق.");
         put("MeeroAutoReplyWindowDays", "Window days", "أيام النافذة");
         put("MeeroAutoReplyWindowDaysAll", "Every day", "كل الأيام");
         put("MeeroAutoReplyWindowDaysNone", "No days - window never runs", "بدون أيام (النافذة لا تعمل)");
@@ -85,7 +79,7 @@ public final class MeeroStrings {
         put("MeeroChatLockMethodSystem", "Device biometric / device lock", "بصمة / قفل الجهاز");
         put("MeeroChatLockNewMessage", "New message in a locked chat", "وصلتك رسالة جديدة بمحادثة مقفلة");
         put("MeeroChatLockRemove", "Remove lock", "فك القفل");
-        put("MeeroChatLockRemoveConfirm", "Unlock %1$s and restore its notifications?", "تفك القفل عن %1$s وترجّع إشعاراتها؟");
+        put("MeeroChatLockRemoveConfirm", "Unlock %251$s and restore its notifications?", "تفك القفل عن %251$s وترجّع إشعاراتها؟");
         put("MeeroChatLockRowDetail", "Locked - fingerprint needed on entry", "مقفلة - البصمة مطلوبة عند الدخول");
         put("MeeroChatLockSetCode", "Set your code", "عيّن الرمز");
         put("MeeroChatLockSetCodeHint", "Enter an 8-digit code (numbers only)", "اكتب رمز مكوّن من 8 أرقام (أرقام فقط)");
@@ -141,7 +135,7 @@ public final class MeeroStrings {
         put("MeeroHeroMsg3", "Wooow fire 🔥", "وااو ناريي 🔥");
         put("MeeroHiddenChats", "Hidden chats", "المحادثات المخفية");
         put("MeeroHunterClearConfirm", "Delete the whole log?", "تمسح السجل كله؟");
-        put("MeeroHunterDeleteConfirm", "Deletes %1$d selected items from the catcher log on this device only. Your chats are not affected.", "راح ينحذف %1$d عنصر محدد من سجل الصائد على جهازك فقط. محادثاتك ما تتأثر.");
+        put("MeeroHunterDeleteConfirm", "Deletes %251$d selected items from the catcher log on this device only. Your chats are not affected.", "راح ينحذف %251$d عنصر محدد من سجل الصائد على جهازك فقط. محادثاتك ما تتأثر.");
         put("MeeroHunterDeletedMsg", "deleted a message", "حذف رسالة");
         put("MeeroHunterEditedMsg", "edited a message", "عدّل رسالة");
         put("MeeroHunterEmpty", "Nothing caught yet", "لا شيء ملتقط بعد");
@@ -151,7 +145,7 @@ public final class MeeroStrings {
         put("MeeroHunterMedia", "Media 📎", "وسائط 📎");
         put("MeeroHunterNothingSelected", "Nothing selected. Long-press an entry, tap the ones you want, then delete.", "ماكو عناصر محددة. اضغط مطولاً على عنصر، حدد اللي تريده، بعدين احذف.");
         put("MeeroHunterSelectAll", "Select all", "تحديد الكل");
-        put("MeeroHunterSelectedCount", "Selected: %1$d", "المحدد: %1$d");
+        put("MeeroHunterSelectedCount", "Selected: %251$d", "المحدد: %251$d");
         put("MeeroHunterSomeone", "Someone", "شخص ما");
         put("MeeroHunterTitle", "Delete catcher", "صائد الحاذف");
         put("MeeroIconAlt", "MeeroX (alt)", "MeeroX (بديل)");
@@ -228,7 +222,7 @@ public final class MeeroStrings {
         put("MeeroPoolWordMany", "texts", "نصوص");
         put("MeeroPoolWordOne", "text", "نص");
         put("MeeroPrivacyAccept", "Accept and continue", "موافق ومتابعة");
-        put("MeeroPrivacyBody", "MeeroX is an unofficial Telegram client.\n\n• MeeroX does not collect, store or transmit your personal data to any third party.\n• Your messages travel only between your device and Telegram's servers, exactly as with the official app.\n• Settings, fonts and preferences are stored locally on your device.\n• The source code is open and can be reviewed at any time.\n\nBy continuing you agree to use MeeroX at your own responsibility, and to respect Telegram's Terms of Service.", "ميرو إكس تطبيق غير رسمي لتيليجرام.\n\n• لا يجمع ميرو إكس أي بيانات شخصية ولا يرسلها لأي طرف ثالث.\n• رسائلك تنتقل بين جهازك وخوادم تيليجرام فقط، تماماً كالتطبيق الرسمي.\n• الإعدادات والخطوط والتفضيلات تُحفظ محلياً على جهازك.\n• الكود المصدري مفتوح ويمكن مراجعته في أي وقت.\n\nبالمتابعة فإنك توافق على استخدام ميرو إكس على مسؤوليتك الخاصة، وعلى احترام شروط خدمة تيليجرام.");
+        put("MeeroPrivacyBody", "MeeroX is an unofficial Telegram client.%0A%0A• MeeroX does not collect, store or transmit your personal data to any third party.%0A• Your messages travel only between your device and Telegram's servers, exactly as with the official app.%0A• Settings, fonts and preferences are stored locally on your device.%0A• The source code is open and can be reviewed at any time.%0A%0ABy continuing you agree to use MeeroX at your own responsibility, and to respect Telegram's Terms of Service.", "ميرو إكس تطبيق غير رسمي لتيليجرام.%0A%0A• لا يجمع ميرو إكس أي بيانات شخصية ولا يرسلها لأي طرف ثالث.%0A• رسائلك تنتقل بين جهازك وخوادم تيليجرام فقط، تماماً كالتطبيق الرسمي.%0A• الإعدادات والخطوط والتفضيلات تُحفظ محلياً على جهازك.%0A• الكود المصدري مفتوح ويمكن مراجعته في أي وقت.%0A%0Aبالمتابعة فإنك توافق على استخدام ميرو إكس على مسؤوليتك الخاصة، وعلى احترام شروط خدمة تيليجرام.");
         put("MeeroPrivacyTitle", "Privacy Policy", "سياسة الخصوصية");
         put("MeeroRandomEmoji", "Random emoji at the end 🎲", "إيموجي عشوائي بالنهاية 🎲");
         put("MeeroReadAllChats", "Read all chats", "قراءة جميع الدردشات");
@@ -258,11 +252,11 @@ public final class MeeroStrings {
         put("MeeroSettingsTitle", "MeeroX", "MeeroX");
         put("MeeroSigContinue", "Continue at my own risk", "الاستمرار على مسؤوليتي");
         put("MeeroSigExit", "Exit now", "خروج فوري");
-        put("MeeroSigWarningText", "This copy's signature does NOT match the official MeeroX fingerprint. It may be a fake or tampered build that can steal your account.\n\nThis copy:\n%1$s\n\nOfficial fingerprint:\n%2$s\n\nInstall MeeroX only from the developer's official channel.", "توقيع هذه النسخة لا يطابق بصمة MeeroX الرسمية. يمكن أن تكون نسخة مقرصنة أو معدّلة تسرق حسابك وبياناتك.\n\nبصمة هذه النسخة:\n%1$s\n\nالبصمة الرسمية:\n%2$s\n\nحمّل MeeroX فقط من قناة المطور الرسمية.");
+        put("MeeroSigWarningText", "This copy's signature does NOT match the official MeeroX fingerprint. It may be a fake or tampered build that can steal your account.%0A%0AThis copy:%0A%251$s%0A%0AOfficial fingerprint:%0A%252$s%0A%0AInstall MeeroX only from the developer's official channel.", "توقيع هذه النسخة لا يطابق بصمة MeeroX الرسمية. يمكن أن تكون نسخة مقرصنة أو معدّلة تسرق حسابك وبياناتك.%0A%0Aبصمة هذه النسخة:%0A%251$s%0A%0Aالبصمة الرسمية:%0A%252$s%0A%0Aحمّل MeeroX فقط من قناة المطور الرسمية.");
         put("MeeroSigWarningTitle", "⚠️ Warning: unofficial copy", "⚠️ تحذير: نسخة غير رسمية");
         put("MeeroSmoothPassInfo", "Pre-warms the first popup menu, the first chat you open and the first chat-list swipe after launching the app. OFF restores the exact previous start-up.", "يسخّن مسبقاً أول قائمة منبثقة وأول دردشة تفتحها وأول سحبة بقائمة الدردشات بعد تشغيل التطبيق. الإطفاء يرجّع التشغيل مثل السابق حرفياً.");
         put("MeeroStatsChartInfo", "Bars show your outgoing messages by hour of day (device local time). The tallest bar carries its value on top.", "الأعمدة تعرض رسائلك الصادرة موزعة على ساعات اليوم (بتوقيت جهازك)، وأعلى عمود مكتوبة قيمته فوقه.");
-        put("MeeroStatsDryDays", "%1$d days without a reply", "%1$d يوم بلا رد");
+        put("MeeroStatsDryDays", "%251$d days without a reply", "%251$d يوم بلا رد");
         put("MeeroStatsDryHeader", "Quiet chats", "المحادثات الجافة");
         put("MeeroStatsDryInfo", "Private chats whose last message came from their side - you have not replied yet.", "محادثات خاصة آخر رسالة بيها من طرفهم وأنت بعدك ما رديت عليها.");
         put("MeeroStatsDryToday", "Today", "اليوم");
@@ -296,13 +290,13 @@ public final class MeeroStrings {
         put("MeeroUsageGuide", "How to use", "طريقة الاستخدام");
         put("MeeroUsageGuideGotIt", "Got it", "فهمت");
         put("MeeroVaultBrandSub", "Hidden from everywhere - they only live here", "مخفية عن كل مكان - ما تعيش غير هنا");
-        put("MeeroVaultCount", "%1$d hidden chats", "%1$d محادثة مخفية");
+        put("MeeroVaultCount", "%251$d hidden chats", "%251$d محادثة مخفية");
         put("MeeroVaultEmpty", "No hidden chats.", "ماكو محادثات مخفية.");
         put("MeeroVaultEmptyHint", "Lock a chat from the Chat lock section and it shows up here", "اقفل أي محادثة من قسم «قفل المحادثات» وهي ترجع تظهر هنا");
         put("MeeroVaultGateHint", "Unlock to see your hidden chats", "افتح حتى تشوف محادثاتك المخفية");
         put("MeeroVaultInfo", "One unlock per session, instant relock on exit. Vault access: long-press the Chats tab > \"Hidden chats\".", "فتح وحدة للجلسة والخروج ينقفل فورًا. الوصول: ضغطة مطولة على تبويب «المحادثات» ← «المحادثات المخفية».");
         put("MeeroVaultTitle", "Hidden chats", "المحادثات المخفية");
-        put("MeeroVaultUnread", "%1$d unread", "%1$d غير مقروءة");
+        put("MeeroVaultUnread", "%251$d unread", "%251$d غير مقروءة");
         put("MeeroVersion", "Version", "الإصدار");
         put("MeeroWatchAdd", "Watch someone", "إضافة شخص للمراقبة");
         put("MeeroWatchAddByHandle", "Enter username or ID", "إدخال يوزر أو أيدي");
@@ -361,7 +355,7 @@ public final class MeeroStrings {
         put("MixerBgPaper", "Paper White", "أبيض ورقي");
         put("MixerFailed", "Could not generate the theme file. Please try again.", "ما قدرنا نولّد ملف الثيم، جرّب مرة ثانية.");
         put("MixerHeader", "Compose your theme by feel", "كوّن ثيمك على ذوقك");
-        put("MixerHubTitle", "Theme Mixer (MeeroX)", "صانع الثيمات (ميرو)");
+        put("MixerHubTitle", "Theme Mixer (MeeroX)", "صانع الثيمات (آراس كرام)");
         put("MixerInBubble", "Incoming bubble", "فقاعة الطرف الثاني");
         put("MixerInBubbleBlack", "Pure AMOLED black", "أسود AMOLED خالص");
         put("MixerInBubbleFollow", "Follow background style", "يتبع نمط الخلفية");
@@ -384,7 +378,7 @@ public final class MeeroStrings {
         put("SmartFolderUnreadChats", "Unread chats", "محادثات غير مقروءة");
         put("SmartFolderUnreadChatsRule", "Rule: contacts + non-contacts + groups with unread", "القاعدة: جهات اتصال + غير معروفين + مجموعات بها غير مقروء");
         put("SmartFoldersHeader", "One-tap folders, built from rules", "مجلدات بلمسة وحدة، مبنية بقواعد");
-        put("SmartFoldersHubTitle", "Smart Folders (MeeroX)", "المجلدات الذكية (ميرو)");
+        put("SmartFoldersHubTitle", "Smart Folders (MeeroX)", "المجلدات الذكية (آراس كرام)");
         put("SmartFoldersInfo", "Each preset creates a real synced Telegram folder composed of rules (type, unread, muted). It appears in your chats list immediately, syncs to every device, and can be edited or removed from Telegram's regular Folders settings. Count-based rules (e.g. \"unread more than 5\") cannot live in the server engine, so they are approximated by \"unread\".", "كل قالب ينشئ مجلد تيليجرام حقيقي متزامن مركّب من قواعد (النوع، غير المقروء، المكتوم). يظهر بقائمة محادثاتك فوراً، يتزامن لكل أجهزتك، وتقدر تعدله أو تحذفه من إعدادات «المجلدات» الرسمية. القواعد العددية (مثلاً «غير مقروء أكثر من 5») ما يدعمها محرك السيرفر، فاستبدلناها بـ«غير مقروء».");
         put("SmartFoldersTitle", "Smart Folders", "المجلدات الذكية");
         put("StyleIos", "iOS", "آي أو إس");
@@ -413,8 +407,8 @@ public final class MeeroStrings {
         put("meeroFlexWidth", "Flexible menu width", "عرض مرن للقوائم");
         put("meeroGhostSwipeRead", "Ghost read by swipe", "قراءة شبحية بالسحب");
         put("meeroGlassBorders", "Glass edges", "حدود زجاجية");
-        put("meeroGlassSettings", "Meero glass design", "تصميم ميرو الزجاجي");
-        put("meeroGlassSwitches", "Meero glass switches", "مفاتيح ميرو الزجاجية");
+        put("meeroGlassSettings", "Meero glass design", "تصميم آراس كرام الزجاجي");
+        put("meeroGlassSwitches", "Meero glass switches", "مفاتيح آراس الزجاجية");
         put("meeroIosAlerts", "iOS dialog rules", "فواصل الحوارات مثل الآيفون");
         put("meeroIosAnim", "iOS message animation", "أنميشن الرسائل بنمط iOS");
         put("meeroIosCall", "iOS call buttons", "أزرار المكالمة مثل الآيفون");
@@ -500,35 +494,529 @@ public final class MeeroStrings {
     }
 
     private static void put(String key, String en, String ar) {
-        MAP.put(key, new String[]{en, ar});
+        STRINGS.put(key, new String[]{en, ar});
+    }
+
+    // ============================================================
+    // ربط الأرقام بالمفاتيح (472 رقم)
+    // ============================================================
+    
+    private static final HashMap<Integer, String> ID_TO_KEY = new HashMap<>();
+
+    static {
+        ID_TO_KEY.put(0, "BackAnimationIos");
+        ID_TO_KEY.put(1, "JanitorDays14");
+        ID_TO_KEY.put(2, "JanitorDays30");
+        ID_TO_KEY.put(3, "JanitorDays7");
+        ID_TO_KEY.put(4, "JanitorModeDaily");
+        ID_TO_KEY.put(5, "JanitorModeLimit");
+        ID_TO_KEY.put(6, "JanitorModeWeekly");
+        ID_TO_KEY.put(7, "JanitorReport");
+        ID_TO_KEY.put(8, "MeeroAmoledBubblesInfo");
+        ID_TO_KEY.put(9, "MeeroAmoledStrokeInfo");
+        ID_TO_KEY.put(10, "MeeroAppEdition");
+        ID_TO_KEY.put(11, "MeeroAuditChat");
+        ID_TO_KEY.put(12, "MeeroAuditFailed");
+        ID_TO_KEY.put(13, "MeeroAuditSettings");
+        ID_TO_KEY.put(14, "MeeroAuditSuccess");
+        ID_TO_KEY.put(15, "MeeroAuditVault");
+        ID_TO_KEY.put(16, "MeeroAutoJanitorInfo");
+        ID_TO_KEY.put(17, "MeeroAutoRelock");
+        ID_TO_KEY.put(18, "MeeroAutoReplyBounds");
+        ID_TO_KEY.put(19, "MeeroAutoReplyCooldown");
+        ID_TO_KEY.put(20, "MeeroAutoReplyDefaultText");
+        ID_TO_KEY.put(21, "MeeroAutoReplyDelay");
+        ID_TO_KEY.put(22, "MeeroAutoReplyInfo");
+        ID_TO_KEY.put(23, "MeeroAutoReplySampleName");
+        ID_TO_KEY.put(24, "MeeroAutoReplyText");
+        ID_TO_KEY.put(25, "MeeroAutoReplyTextHint");
+        ID_TO_KEY.put(26, "MeeroAutoReplyTitle");
+        ID_TO_KEY.put(27, "MeeroAutoReplyUsage");
+        ID_TO_KEY.put(28, "MeeroAutoReplyWindowDays");
+        ID_TO_KEY.put(29, "MeeroAutoReplyWindowDaysAll");
+        ID_TO_KEY.put(30, "MeeroAutoReplyWindowDaysNone");
+        ID_TO_KEY.put(31, "MeeroAutoReplyWindowEnd");
+        ID_TO_KEY.put(32, "MeeroAutoReplyWindowInfo");
+        ID_TO_KEY.put(33, "MeeroAutoReplyWindowStart");
+        ID_TO_KEY.put(34, "MeeroAutoReplyWindowTitle");
+        ID_TO_KEY.put(35, "MeeroBubbleStyle");
+        ID_TO_KEY.put(36, "MeeroCardsInfo");
+        ID_TO_KEY.put(37, "MeeroChannel1");
+        ID_TO_KEY.put(38, "MeeroChannel2");
+        ID_TO_KEY.put(39, "MeeroChatLockAdd");
+        ID_TO_KEY.put(40, "MeeroChatLockChangeCode");
+        ID_TO_KEY.put(41, "MeeroChatLockCodeMismatch");
+        ID_TO_KEY.put(42, "MeeroChatLockCodeSaved");
+        ID_TO_KEY.put(43, "MeeroChatLockCodeWrong");
+        ID_TO_KEY.put(44, "MeeroChatLockConfirmCode");
+        ID_TO_KEY.put(45, "MeeroChatLockEmpty");
+        ID_TO_KEY.put(46, "MeeroChatLockEnterCode");
+        ID_TO_KEY.put(47, "MeeroChatLockEnterCodeHint");
+        ID_TO_KEY.put(48, "MeeroChatLockGateHint");
+        ID_TO_KEY.put(49, "MeeroChatLockGateSubtitle");
+        ID_TO_KEY.put(50, "MeeroChatLockGateTitle");
+        ID_TO_KEY.put(51, "MeeroChatLockHeader");
+        ID_TO_KEY.put(52, "MeeroChatLockInfo");
+        ID_TO_KEY.put(53, "MeeroChatLockInvalid");
+        ID_TO_KEY.put(54, "MeeroChatLockMaster");
+        ID_TO_KEY.put(55, "MeeroChatLockMethod");
+        ID_TO_KEY.put(56, "MeeroChatLockMethodCode");
+        ID_TO_KEY.put(57, "MeeroChatLockMethodSystem");
+        ID_TO_KEY.put(58, "MeeroChatLockNewMessage");
+        ID_TO_KEY.put(59, "MeeroChatLockRemove");
+        ID_TO_KEY.put(60, "MeeroChatLockRemoveConfirm");
+        ID_TO_KEY.put(61, "MeeroChatLockRowDetail");
+        ID_TO_KEY.put(62, "MeeroChatLockSetCode");
+        ID_TO_KEY.put(63, "MeeroChatLockSetCodeHint");
+        ID_TO_KEY.put(64, "MeeroChatLockTitle");
+        ID_TO_KEY.put(65, "MeeroChatsMenuFogInfo");
+        ID_TO_KEY.put(66, "MeeroCooldown10");
+        ID_TO_KEY.put(67, "MeeroCooldown30");
+        ID_TO_KEY.put(68, "MeeroCooldown5");
+        ID_TO_KEY.put(69, "MeeroCooldown60");
+        ID_TO_KEY.put(70, "MeeroCooldownEveryMessage");
+        ID_TO_KEY.put(71, "MeeroDayFri");
+        ID_TO_KEY.put(72, "MeeroDayMon");
+        ID_TO_KEY.put(73, "MeeroDaySat");
+        ID_TO_KEY.put(74, "MeeroDaySun");
+        ID_TO_KEY.put(75, "MeeroDayThu");
+        ID_TO_KEY.put(76, "MeeroDayTue");
+        ID_TO_KEY.put(77, "MeeroDayWed");
+        ID_TO_KEY.put(78, "MeeroDelay10");
+        ID_TO_KEY.put(79, "MeeroDelay3");
+        ID_TO_KEY.put(80, "MeeroDelay5");
+        ID_TO_KEY.put(81, "MeeroDelayInstant");
+        ID_TO_KEY.put(82, "MeeroDeveloper");
+        ID_TO_KEY.put(83, "MeeroDialogsStyleInfo");
+        ID_TO_KEY.put(84, "MeeroExclusionsAdd");
+        ID_TO_KEY.put(85, "MeeroExclusionsInfo");
+        ID_TO_KEY.put(86, "MeeroExclusionsNone");
+        ID_TO_KEY.put(87, "MeeroExclusionsRemove");
+        ID_TO_KEY.put(88, "MeeroExclusionsRowDetail");
+        ID_TO_KEY.put(89, "MeeroExclusionsTitle");
+        ID_TO_KEY.put(90, "MeeroExclusionsWordMany");
+        ID_TO_KEY.put(91, "MeeroExclusionsWordOne");
+        ID_TO_KEY.put(92, "MeeroFlexWidthInfo");
+        ID_TO_KEY.put(93, "MeeroFontAdd");
+        ID_TO_KEY.put(94, "MeeroFontBadFormat");
+        ID_TO_KEY.put(95, "MeeroFontDeleteConfirm");
+        ID_TO_KEY.put(96, "MeeroFontPick");
+        ID_TO_KEY.put(97, "MeeroFontSection");
+        ID_TO_KEY.put(98, "MeeroGateCodeHint");
+        ID_TO_KEY.put(99, "MeeroGhostSwipeReadInfo");
+        ID_TO_KEY.put(100, "MeeroGhostSwipeReadNeedRead");
+        ID_TO_KEY.put(101, "MeeroGlassBordersInfo");
+        ID_TO_KEY.put(102, "MeeroGlassSettingsInfo");
+        ID_TO_KEY.put(103, "MeeroGlassSwitchesInfo");
+        ID_TO_KEY.put(104, "MeeroGroupAppearance");
+        ID_TO_KEY.put(105, "MeeroGroupChat");
+        ID_TO_KEY.put(106, "MeeroGroupMotion");
+        ID_TO_KEY.put(107, "MeeroGroupNavigation");
+        ID_TO_KEY.put(108, "MeeroGroupSound");
+        ID_TO_KEY.put(109, "MeeroGroupStorage");
+        ID_TO_KEY.put(110, "MeeroHeaderEdit");
+        ID_TO_KEY.put(111, "MeeroHeroMsg1");
+        ID_TO_KEY.put(112, "MeeroHeroMsg2");
+        ID_TO_KEY.put(113, "MeeroHeroMsg3");
+        ID_TO_KEY.put(114, "MeeroHiddenChats");
+        ID_TO_KEY.put(115, "MeeroHunterClearConfirm");
+        ID_TO_KEY.put(116, "MeeroHunterDeleteConfirm");
+        ID_TO_KEY.put(117, "MeeroHunterDeletedMsg");
+        ID_TO_KEY.put(118, "MeeroHunterEditedMsg");
+        ID_TO_KEY.put(119, "MeeroHunterEmpty");
+        ID_TO_KEY.put(120, "MeeroHunterInfo");
+        ID_TO_KEY.put(121, "MeeroHunterLogHeader");
+        ID_TO_KEY.put(122, "MeeroHunterMaster");
+        ID_TO_KEY.put(123, "MeeroHunterMedia");
+        ID_TO_KEY.put(124, "MeeroHunterNothingSelected");
+        ID_TO_KEY.put(125, "MeeroHunterSelectAll");
+        ID_TO_KEY.put(126, "MeeroHunterSelectedCount");
+        ID_TO_KEY.put(127, "MeeroHunterSomeone");
+        ID_TO_KEY.put(128, "MeeroHunterTitle");
+        ID_TO_KEY.put(129, "MeeroIconAlt");
+        ID_TO_KEY.put(130, "MeeroIconStyle2");
+        ID_TO_KEY.put(131, "MeeroIosAlertsInfo");
+        ID_TO_KEY.put(132, "MeeroIosAnimInfo");
+        ID_TO_KEY.put(133, "MeeroIosCallInfo");
+        ID_TO_KEY.put(134, "MeeroIosCodeInfo");
+        ID_TO_KEY.put(135, "MeeroIosFastScrollInfo");
+        ID_TO_KEY.put(136, "MeeroIosHapticsInfo");
+        ID_TO_KEY.put(137, "MeeroIosIconsInfo");
+        ID_TO_KEY.put(138, "MeeroIosInputPillInfo");
+        ID_TO_KEY.put(139, "MeeroIosIntroInfo");
+        ID_TO_KEY.put(140, "MeeroIosLoadingInfo");
+        ID_TO_KEY.put(141, "MeeroIosMainMenuInfo");
+        ID_TO_KEY.put(142, "MeeroIosMediaGridInfo");
+        ID_TO_KEY.put(143, "MeeroIosMenuAnimInfo");
+        ID_TO_KEY.put(144, "MeeroIosMsgMenuInfo");
+        ID_TO_KEY.put(145, "MeeroIosPopupMenuInfo");
+        ID_TO_KEY.put(146, "MeeroIosRowInfo");
+        ID_TO_KEY.put(147, "MeeroIosSearchInfo");
+        ID_TO_KEY.put(148, "MeeroIosSelectionInfo");
+        ID_TO_KEY.put(149, "MeeroIosShadowsInfo");
+        ID_TO_KEY.put(150, "MeeroIosSoundsInfo");
+        ID_TO_KEY.put(151, "MeeroIosStoriesInfo");
+        ID_TO_KEY.put(152, "MeeroIosWaveformInfo");
+        ID_TO_KEY.put(153, "MeeroKeywordAdd");
+        ID_TO_KEY.put(154, "MeeroKeywordAddAll");
+        ID_TO_KEY.put(155, "MeeroKeywordAddChat");
+        ID_TO_KEY.put(156, "MeeroKeywordAll");
+        ID_TO_KEY.put(157, "MeeroKeywordEdit");
+        ID_TO_KEY.put(158, "MeeroKeywordEmpty");
+        ID_TO_KEY.put(159, "MeeroKeywordHeader");
+        ID_TO_KEY.put(160, "MeeroKeywordInfo");
+        ID_TO_KEY.put(161, "MeeroKeywordMaster");
+        ID_TO_KEY.put(162, "MeeroKeywordTitle");
+        ID_TO_KEY.put(163, "MeeroKeywordWordsHint");
+        ID_TO_KEY.put(164, "MeeroLockAudit");
+        ID_TO_KEY.put(165, "MeeroLockAuditClear");
+        ID_TO_KEY.put(166, "MeeroLockAuditClearConfirm");
+        ID_TO_KEY.put(167, "MeeroLockAuditCleared");
+        ID_TO_KEY.put(168, "MeeroLockAuditEmpty");
+        ID_TO_KEY.put(169, "MeeroLockAuditInfo");
+        ID_TO_KEY.put(170, "MeeroMenuBlurInfo");
+        ID_TO_KEY.put(171, "MeeroNightText");
+        ID_TO_KEY.put(172, "MeeroNightTextEmpty");
+        ID_TO_KEY.put(173, "MeeroNightTextHint");
+        ID_TO_KEY.put(174, "MeeroNightTextOn");
+        ID_TO_KEY.put(175, "MeeroOnceConsentAccept");
+        ID_TO_KEY.put(176, "MeeroOnceConsentDecline");
+        ID_TO_KEY.put(177, "MeeroOnceConsentText");
+        ID_TO_KEY.put(178, "MeeroOnceConsentTitle");
+        ID_TO_KEY.put(179, "MeeroOnceCount");
+        ID_TO_KEY.put(180, "MeeroOnceCountHeader");
+        ID_TO_KEY.put(181, "MeeroOnceInfo");
+        ID_TO_KEY.put(182, "MeeroOnceKindPhoto");
+        ID_TO_KEY.put(183, "MeeroOnceKindVideo");
+        ID_TO_KEY.put(184, "MeeroOnceMaster");
+        ID_TO_KEY.put(185, "MeeroOnceSavedNotif");
+        ID_TO_KEY.put(186, "MeeroOnceTitle");
+        ID_TO_KEY.put(187, "MeeroPickerCardMsg");
+        ID_TO_KEY.put(188, "MeeroPickerLiveHint");
+        ID_TO_KEY.put(189, "MeeroPickerRowTitle");
+        ID_TO_KEY.put(190, "MeeroPickerSwipeHint");
+        ID_TO_KEY.put(191, "MeeroPickerTabBubbles");
+        ID_TO_KEY.put(192, "MeeroPickerTabTicks");
+        ID_TO_KEY.put(193, "MeeroPoolAdd");
+        ID_TO_KEY.put(194, "MeeroPoolDelete");
+        ID_TO_KEY.put(195, "MeeroPoolEdit");
+        ID_TO_KEY.put(196, "MeeroPoolInfo");
+        ID_TO_KEY.put(197, "MeeroPoolMaster");
+        ID_TO_KEY.put(198, "MeeroPoolNone");
+        ID_TO_KEY.put(199, "MeeroPoolTitle");
+        ID_TO_KEY.put(200, "MeeroPoolWordMany");
+        ID_TO_KEY.put(201, "MeeroPoolWordOne");
+        ID_TO_KEY.put(202, "MeeroPrivacyAccept");
+        ID_TO_KEY.put(203, "MeeroPrivacyBody");
+        ID_TO_KEY.put(204, "MeeroPrivacyTitle");
+        ID_TO_KEY.put(205, "MeeroRandomEmoji");
+        ID_TO_KEY.put(206, "MeeroReadAllChats");
+        ID_TO_KEY.put(207, "MeeroReadAllConfirm");
+        ID_TO_KEY.put(208, "MeeroRelockAfter5Min");
+        ID_TO_KEY.put(209, "MeeroRelockAfterMin");
+        ID_TO_KEY.put(210, "MeeroRelockDelay");
+        ID_TO_KEY.put(211, "MeeroRelockNow");
+        ID_TO_KEY.put(212, "MeeroRulesAdd");
+        ID_TO_KEY.put(213, "MeeroRulesChatFallback");
+        ID_TO_KEY.put(214, "MeeroRulesContentHeader");
+        ID_TO_KEY.put(215, "MeeroRulesDelete");
+        ID_TO_KEY.put(216, "MeeroRulesEdit");
+        ID_TO_KEY.put(217, "MeeroRulesInfo");
+        ID_TO_KEY.put(218, "MeeroRulesNone");
+        ID_TO_KEY.put(219, "MeeroRulesPickPrivate");
+        ID_TO_KEY.put(220, "MeeroRulesTimingHeader");
+        ID_TO_KEY.put(221, "MeeroRulesTitle");
+        ID_TO_KEY.put(222, "MeeroRulesWordMany");
+        ID_TO_KEY.put(223, "MeeroRulesWordOne");
+        ID_TO_KEY.put(224, "MeeroSearchHint");
+        ID_TO_KEY.put(225, "MeeroSectionCategories");
+        ID_TO_KEY.put(226, "MeeroSectionData");
+        ID_TO_KEY.put(227, "MeeroSectionInfo");
+        ID_TO_KEY.put(228, "MeeroSepFadeInfo");
+        ID_TO_KEY.put(229, "MeeroSettingsInfo");
+        ID_TO_KEY.put(230, "MeeroSettingsTitle");
+        ID_TO_KEY.put(231, "MeeroSigContinue");
+        ID_TO_KEY.put(232, "MeeroSigExit");
+        ID_TO_KEY.put(233, "MeeroSigWarningText");
+        ID_TO_KEY.put(234, "MeeroSigWarningTitle");
+        ID_TO_KEY.put(235, "MeeroSmoothPassInfo");
+        ID_TO_KEY.put(236, "MeeroStatsChartInfo");
+        ID_TO_KEY.put(237, "MeeroStatsDryDays");
+        ID_TO_KEY.put(238, "MeeroStatsDryHeader");
+        ID_TO_KEY.put(239, "MeeroStatsDryInfo");
+        ID_TO_KEY.put(240, "MeeroStatsDryToday");
+        ID_TO_KEY.put(241, "MeeroStatsDryWord");
+        ID_TO_KEY.put(242, "MeeroStatsDryYesterday");
+        ID_TO_KEY.put(243, "MeeroStatsExport");
+        ID_TO_KEY.put(244, "MeeroStatsFrom");
+        ID_TO_KEY.put(245, "MeeroStatsHoursHeader");
+        ID_TO_KEY.put(246, "MeeroStatsInfo");
+        ID_TO_KEY.put(247, "MeeroStatsLoading");
+        ID_TO_KEY.put(248, "MeeroStatsMonth");
+        ID_TO_KEY.put(249, "MeeroStatsMsgWord");
+        ID_TO_KEY.put(250, "MeeroStatsOpens");
+        ID_TO_KEY.put(251, "MeeroStatsOverview");
+        ID_TO_KEY.put(252, "MeeroStatsProHeader");
+        ID_TO_KEY.put(253, "MeeroStatsShare");
+        ID_TO_KEY.put(254, "MeeroStatsTitle");
+        ID_TO_KEY.put(255, "MeeroStatsToday");
+        ID_TO_KEY.put(256, "MeeroStatsTopHeader");
+        ID_TO_KEY.put(257, "MeeroStatsTotal");
+        ID_TO_KEY.put(258, "MeeroStatsWeek");
+        ID_TO_KEY.put(259, "MeeroStoryDownload");
+        ID_TO_KEY.put(260, "MeeroStoryDownloadInfo");
+        ID_TO_KEY.put(261, "MeeroStorySaved");
+        ID_TO_KEY.put(262, "MeeroSwiftMenusInfo");
+        ID_TO_KEY.put(263, "MeeroSwipeAction");
+        ID_TO_KEY.put(264, "MeeroTapMenuInfo");
+        ID_TO_KEY.put(265, "MeeroTickStyle");
+        ID_TO_KEY.put(266, "MeeroTicksSwitchInfo");
+        ID_TO_KEY.put(267, "MeeroUnifiedRadiiInfo");
+        ID_TO_KEY.put(268, "MeeroUsageGuide");
+        ID_TO_KEY.put(269, "MeeroUsageGuideGotIt");
+        ID_TO_KEY.put(270, "MeeroVaultBrandSub");
+        ID_TO_KEY.put(271, "MeeroVaultCount");
+        ID_TO_KEY.put(272, "MeeroVaultEmpty");
+        ID_TO_KEY.put(273, "MeeroVaultEmptyHint");
+        ID_TO_KEY.put(274, "MeeroVaultGateHint");
+        ID_TO_KEY.put(275, "MeeroVaultInfo");
+        ID_TO_KEY.put(276, "MeeroVaultTitle");
+        ID_TO_KEY.put(277, "MeeroVaultUnread");
+        ID_TO_KEY.put(278, "MeeroVersion");
+        ID_TO_KEY.put(279, "MeeroWatchAdd");
+        ID_TO_KEY.put(280, "MeeroWatchAddByHandle");
+        ID_TO_KEY.put(281, "MeeroWatchAddFromChats");
+        ID_TO_KEY.put(282, "MeeroWatchAdded");
+        ID_TO_KEY.put(283, "MeeroWatchAlready");
+        ID_TO_KEY.put(284, "MeeroWatchChangedBday");
+        ID_TO_KEY.put(285, "MeeroWatchChangedBio");
+        ID_TO_KEY.put(286, "MeeroWatchChangedName");
+        ID_TO_KEY.put(287, "MeeroWatchChangedPhoto");
+        ID_TO_KEY.put(288, "MeeroWatchChangedUsername");
+        ID_TO_KEY.put(289, "MeeroWatchHandleHint");
+        ID_TO_KEY.put(290, "MeeroWatchInfo");
+        ID_TO_KEY.put(291, "MeeroWatchLogClear");
+        ID_TO_KEY.put(292, "MeeroWatchLogClearConfirm");
+        ID_TO_KEY.put(293, "MeeroWatchLogEmpty");
+        ID_TO_KEY.put(294, "MeeroWatchLogInfo");
+        ID_TO_KEY.put(295, "MeeroWatchLogRow");
+        ID_TO_KEY.put(296, "MeeroWatchLogTitle");
+        ID_TO_KEY.put(297, "MeeroWatchMsgIn");
+        ID_TO_KEY.put(298, "MeeroWatchMsgMedia");
+        ID_TO_KEY.put(299, "MeeroWatchMsgNotify");
+        ID_TO_KEY.put(300, "MeeroWatchMsgReplyingTo");
+        ID_TO_KEY.put(301, "MeeroWatchMsgTheirMsg");
+        ID_TO_KEY.put(302, "MeeroWatchMsgTrack");
+        ID_TO_KEY.put(303, "MeeroWatchNoOne");
+        ID_TO_KEY.put(304, "MeeroWatchNotFound");
+        ID_TO_KEY.put(305, "MeeroWatchPhotoHint");
+        ID_TO_KEY.put(306, "MeeroWatchPhotoMissing");
+        ID_TO_KEY.put(307, "MeeroWatchPhotoSave");
+        ID_TO_KEY.put(308, "MeeroWatchPhotoViewNew");
+        ID_TO_KEY.put(309, "MeeroWatchPhotoViewOld");
+        ID_TO_KEY.put(310, "MeeroWatchRemove");
+        ID_TO_KEY.put(311, "MeeroWatchSaveFailed");
+        ID_TO_KEY.put(312, "MeeroWatchSaved");
+        ID_TO_KEY.put(313, "MeeroWatchTitle");
+        ID_TO_KEY.put(314, "MeeroWatchWatchedHeader");
+        ID_TO_KEY.put(315, "MeeroWatchWhatMsg");
+        ID_TO_KEY.put(316, "MeeroWatchWhatMsgReply");
+        ID_TO_KEY.put(317, "MeeroWatchWhatReplyTo");
+        ID_TO_KEY.put(318, "MixerAccent");
+        ID_TO_KEY.put(319, "MixerAccentBlue");
+        ID_TO_KEY.put(320, "MixerAccentGold");
+        ID_TO_KEY.put(321, "MixerAccentMint");
+        ID_TO_KEY.put(322, "MixerAccentOrange");
+        ID_TO_KEY.put(323, "MixerAccentRed");
+        ID_TO_KEY.put(324, "MixerAccentRose");
+        ID_TO_KEY.put(325, "MixerAccentSky");
+        ID_TO_KEY.put(326, "MixerAccentViolet");
+        ID_TO_KEY.put(327, "MixerApplied");
+        ID_TO_KEY.put(328, "MixerApply");
+        ID_TO_KEY.put(329, "MixerBackground");
+        ID_TO_KEY.put(330, "MixerBgAmoled");
+        ID_TO_KEY.put(331, "MixerBgGraphite");
+        ID_TO_KEY.put(332, "MixerBgMidnight");
+        ID_TO_KEY.put(333, "MixerBgPaper");
+        ID_TO_KEY.put(334, "MixerFailed");
+        ID_TO_KEY.put(335, "MixerHeader");
+        ID_TO_KEY.put(336, "MixerHubTitle");
+        ID_TO_KEY.put(337, "MixerInBubble");
+        ID_TO_KEY.put(338, "MixerInBubbleBlack");
+        ID_TO_KEY.put(339, "MixerInBubbleFollow");
+        ID_TO_KEY.put(340, "MixerInBubbleGraphite");
+        ID_TO_KEY.put(341, "MixerInBubbleTinted");
+        ID_TO_KEY.put(342, "MixerInfo");
+        ID_TO_KEY.put(343, "MixerRestore");
+        ID_TO_KEY.put(344, "MixerTitle");
+        ID_TO_KEY.put(345, "SmartFolderActiveGroups");
+        ID_TO_KEY.put(346, "SmartFolderActiveGroupsRule");
+        ID_TO_KEY.put(347, "SmartFolderBots");
+        ID_TO_KEY.put(348, "SmartFolderBotsRule");
+        ID_TO_KEY.put(349, "SmartFolderCreate");
+        ID_TO_KEY.put(350, "SmartFolderDone");
+        ID_TO_KEY.put(351, "SmartFolderExists");
+        ID_TO_KEY.put(352, "SmartFolderFamily");
+        ID_TO_KEY.put(353, "SmartFolderFamilyRule");
+        ID_TO_KEY.put(354, "SmartFolderUnreadChannels");
+        ID_TO_KEY.put(355, "SmartFolderUnreadChannelsRule");
+        ID_TO_KEY.put(356, "SmartFolderUnreadChats");
+        ID_TO_KEY.put(357, "SmartFolderUnreadChatsRule");
+        ID_TO_KEY.put(358, "SmartFoldersHeader");
+        ID_TO_KEY.put(359, "SmartFoldersHubTitle");
+        ID_TO_KEY.put(360, "SmartFoldersInfo");
+        ID_TO_KEY.put(361, "SmartFoldersTitle");
+        ID_TO_KEY.put(362, "StyleIos");
+        ID_TO_KEY.put(363, "meeroAmoledBubbles");
+        ID_TO_KEY.put(364, "meeroAmoledStroke");
+        ID_TO_KEY.put(365, "meeroAutoJanitor");
+        ID_TO_KEY.put(366, "meeroBubbleDesc0");
+        ID_TO_KEY.put(367, "meeroBubbleDesc1");
+        ID_TO_KEY.put(368, "meeroBubbleDesc2");
+        ID_TO_KEY.put(369, "meeroBubbleDesc3");
+        ID_TO_KEY.put(370, "meeroBubbleDesc4");
+        ID_TO_KEY.put(371, "meeroBubbleDesc5");
+        ID_TO_KEY.put(372, "meeroBubbleDesc6");
+        ID_TO_KEY.put(373, "meeroBubbleDesc7");
+        ID_TO_KEY.put(374, "meeroBubbleName0");
+        ID_TO_KEY.put(375, "meeroBubbleName1");
+        ID_TO_KEY.put(376, "meeroBubbleName2");
+        ID_TO_KEY.put(377, "meeroBubbleName3");
+        ID_TO_KEY.put(378, "meeroBubbleName4");
+        ID_TO_KEY.put(379, "meeroBubbleName5");
+        ID_TO_KEY.put(380, "meeroBubbleName6");
+        ID_TO_KEY.put(381, "meeroBubbleName7");
+        ID_TO_KEY.put(382, "meeroCards");
+        ID_TO_KEY.put(383, "meeroChatsMenuFog");
+        ID_TO_KEY.put(384, "meeroDialogsStyle");
+        ID_TO_KEY.put(385, "meeroFlexWidth");
+        ID_TO_KEY.put(386, "meeroGhostSwipeRead");
+        ID_TO_KEY.put(387, "meeroGlassBorders");
+        ID_TO_KEY.put(388, "meeroGlassSettings");
+        ID_TO_KEY.put(389, "meeroGlassSwitches");
+        ID_TO_KEY.put(390, "meeroIosAlerts");
+        ID_TO_KEY.put(391, "meeroIosAnim");
+        ID_TO_KEY.put(392, "meeroIosCall");
+        ID_TO_KEY.put(393, "meeroIosCode");
+        ID_TO_KEY.put(394, "meeroIosFastScroll");
+        ID_TO_KEY.put(395, "meeroIosHaptics");
+        ID_TO_KEY.put(396, "meeroIosIcons");
+        ID_TO_KEY.put(397, "meeroIosInputPill");
+        ID_TO_KEY.put(398, "meeroIosIntro");
+        ID_TO_KEY.put(399, "meeroIosLoading");
+        ID_TO_KEY.put(400, "meeroIosMainMenu");
+        ID_TO_KEY.put(401, "meeroIosMediaGrid");
+        ID_TO_KEY.put(402, "meeroIosMenuAnim");
+        ID_TO_KEY.put(403, "meeroIosMsgMenu");
+        ID_TO_KEY.put(404, "meeroIosPopupMenu");
+        ID_TO_KEY.put(405, "meeroIosRow");
+        ID_TO_KEY.put(406, "meeroIosSearch");
+        ID_TO_KEY.put(407, "meeroIosSelection");
+        ID_TO_KEY.put(408, "meeroIosShadows");
+        ID_TO_KEY.put(409, "meeroIosSounds");
+        ID_TO_KEY.put(410, "meeroIosStories");
+        ID_TO_KEY.put(411, "meeroIosWaveform");
+        ID_TO_KEY.put(412, "meeroJanitorAge");
+        ID_TO_KEY.put(413, "meeroJanitorLimit");
+        ID_TO_KEY.put(414, "meeroJanitorMode");
+        ID_TO_KEY.put(415, "meeroMenuBlur");
+        ID_TO_KEY.put(416, "meeroSepFade");
+        ID_TO_KEY.put(417, "meeroSmoothPass");
+        ID_TO_KEY.put(418, "meeroStoryDownload");
+        ID_TO_KEY.put(419, "meeroSwiftMenus");
+        ID_TO_KEY.put(420, "meeroTapMenu");
+        ID_TO_KEY.put(421, "meeroTickDesc0");
+        ID_TO_KEY.put(422, "meeroTickDesc1");
+        ID_TO_KEY.put(423, "meeroTickDesc10");
+        ID_TO_KEY.put(424, "meeroTickDesc11");
+        ID_TO_KEY.put(425, "meeroTickDesc12");
+        ID_TO_KEY.put(426, "meeroTickDesc13");
+        ID_TO_KEY.put(427, "meeroTickDesc14");
+        ID_TO_KEY.put(428, "meeroTickDesc15");
+        ID_TO_KEY.put(429, "meeroTickDesc2");
+        ID_TO_KEY.put(430, "meeroTickDesc3");
+        ID_TO_KEY.put(431, "meeroTickDesc4");
+        ID_TO_KEY.put(432, "meeroTickDesc5");
+        ID_TO_KEY.put(433, "meeroTickDesc6");
+        ID_TO_KEY.put(434, "meeroTickDesc7");
+        ID_TO_KEY.put(435, "meeroTickDesc8");
+        ID_TO_KEY.put(436, "meeroTickDesc9");
+        ID_TO_KEY.put(437, "meeroTickName0");
+        ID_TO_KEY.put(438, "meeroTickName1");
+        ID_TO_KEY.put(439, "meeroTickName10");
+        ID_TO_KEY.put(440, "meeroTickName11");
+        ID_TO_KEY.put(441, "meeroTickName12");
+        ID_TO_KEY.put(442, "meeroTickName13");
+        ID_TO_KEY.put(443, "meeroTickName14");
+        ID_TO_KEY.put(444, "meeroTickName15");
+        ID_TO_KEY.put(445, "meeroTickName2");
+        ID_TO_KEY.put(446, "meeroTickName3");
+        ID_TO_KEY.put(447, "meeroTickName4");
+        ID_TO_KEY.put(448, "meeroTickName5");
+        ID_TO_KEY.put(449, "meeroTickName6");
+        ID_TO_KEY.put(450, "meeroTickName7");
+        ID_TO_KEY.put(451, "meeroTickName8");
+        ID_TO_KEY.put(452, "meeroTickName9");
+        ID_TO_KEY.put(453, "meeroTicksSwitch");
+        ID_TO_KEY.put(454, "meeroUnifiedRadii");
+        ID_TO_KEY.put(455, "MeeroIconMBold");
+        ID_TO_KEY.put(456, "MeeroIconMMarker");
+        ID_TO_KEY.put(457, "MeeroIconMTile");
+        ID_TO_KEY.put(458, "MeeroIconMDuo");
+        ID_TO_KEY.put(459, "MeeroAuditIntegrity");
+        ID_TO_KEY.put(460, "MeeroAuditIntegrityOk");
+        ID_TO_KEY.put(461, "MeeroAuditIntegrityBad");
+        ID_TO_KEY.put(462, "MeeroAuditIntegrityNone");
+        ID_TO_KEY.put(463, "AboutMainChannel");
+        ID_TO_KEY.put(464, "MeeroChannelPromoBody");
+        ID_TO_KEY.put(465, "MeeroChannelPromoJoin");
+        ID_TO_KEY.put(466, "MeeroWatchCopied");
+        ID_TO_KEY.put(467, "MeeroChatHeaderAvatar");
+        ID_TO_KEY.put(468, "MeeroMenuWatchDiag");
+        ID_TO_KEY.put(469, "MeeroMenuWatchDiagDesc");
+        ID_TO_KEY.put(470, "MeeroIosAttachPanel");
+        ID_TO_KEY.put(471, "MeeroIosAttachPanelDesc");
     }
 
     private static boolean isArabic() {
         try {
-            final Locale l = org.telegram.messenger.ApplicationLoader
-                    .applicationContext.getResources().getConfiguration().locale;
-            return l != null && "ar".equals(l.getLanguage());
+            return "ar".equals(Locale.getDefault().getLanguage());
         } catch (Throwable t) {
             return false;
         }
     }
 
-    /** Drop-in for LocaleController.getString(R.string.X) / getString(R.string.X). */
-    public static String s(String key) {
-        final String[] v = MAP.get(key);
-        if (v == null) {
-            return key;
-        }
-        return isArabic() && v[1] != null ? v[1] : (v[0] != null ? v[0] : v[1]);
+    public static String get(String key) {
+        String[] v = STRINGS.get(key);
+        if (v == null) return key;
+        return isArabic() && v[1] != null && !v[1].isEmpty() ? v[1] : v[0];
     }
 
-    /** Drop-in for getString(R.string.X, ...) / LocaleController.formatString(R.string.X, ...). */
-    public static String f(String key, Object... args) {
-        final String raw = s(key);
-        try {
-            return String.format(raw, args);
-        } catch (Throwable t) {
-            return raw;
+    public static String s(String key) {
+        return get(key);
+    }
+
+    public static String s(int id) {
+        String key = ID_TO_KEY.get(id);
+        if (key == null) {
+            return String.valueOf(id);
         }
+        return get(key);
+    }
+
+    public static String title(String key) {
+        return get(key);
+    }
+
+    public static String f(String key, Object... args) {
+        try {
+            return String.format(get(key), args);
+        } catch (Throwable t) {
+            return get(key);
+        }
+    }
+
+    public static String f(int id, Object... args) {
+        return f(String.valueOf(id), args);
     }
 }
