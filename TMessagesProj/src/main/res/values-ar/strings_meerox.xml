@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="NekoSettings">إعدادات ميرو</string>
+    <string name="NekoSettings">إعدادات آراس كرام</string>
     <string name="IPv6">تفضيل IPv6</string>
     <string name="MessageMenu">قائمة الرسالة</string>
     <string name="HidePhone">إخفاء رقم الهاتف</string>
@@ -65,8 +65,8 @@
     <string name="NoiseSuppressAndVoiceEnhance">تحسينات الصوت</string>
     <string name="RepeatAsCopy">إعادة نشر كنسخة</string>
     <string name="DoubleTapAction">إجراءات النقر المزدوج</string>
-    <string name="CustomTitleHint">اتركه فارغاً لاستخدام ميرو إكس</string>
-    <string name="NeedChangeNekoSettings">تحتاج إلى تغيير إعدادات ميرو</string>
+    <string name="CustomTitleHint">اتركه فارغاً لاستخدام آراس كرام</string>
+    <string name="NeedChangeNekoSettings">تحتاج إلى تغيير إعدادات آراس كرام</string>
     <string name="EnableSaveDeletedMessages">حفظ الرسائل المحذوفة</string>
     <string name="DeletedMessage">محذوفة</string>
     <string name="EnableSaveEditsHistory">حفظ سجل التعديلات</string>
