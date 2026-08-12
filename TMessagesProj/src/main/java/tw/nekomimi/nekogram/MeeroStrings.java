@@ -4,26 +4,20 @@ import java.util.HashMap;
 import java.util.Locale;
 
 /**
- * MeeroX v171 - every MeeroX feature string (names, descriptions,
- * dialogs...) relocated OUT of resources.arsc INTO the encrypted DEX
- * vault (this class ships only inside assets/meero_vault/dex.enc).
- *
- * Before v171 these 455 strings sat in res values dirs (values +
- * values-ar)/strings_meerox.xml, readable by any static-analysis /
- * unpack tool via the resource table. Now the resource dump shows
- * NOTHING about MeeroX features.
- *
- * Generated from strings_meerox.xml exactly (values preserved 1:1 with
- * android unescaping applied) - do not edit by hand, regenerate.
+ * MeeroX - جميع النصوص المفكوكة
+ * هذه النسخة خالية من التشفير وتعمل مباشرة
  */
 public final class MeeroStrings {
 
     private MeeroStrings() {
     }
 
-    /** key -> { english, arabic (nullable) } */
-    private static final HashMap<String, String[]> MAP = new HashMap<String, String[]>();
-
+    // ============================================================
+    // جميع النصوص - المفتاح -> [إنجليزي, عربي]
+    // ============================================================
+    
+    private static final HashMap<String, String[]> STRINGS = new HashMap<>();
+    
     static {
         put("BackAnimationIos", "iOS", "آي أو إس");
         put("JanitorDays14", "14 days", "14 يوم");
@@ -361,7 +355,7 @@ public final class MeeroStrings {
         put("MixerBgPaper", "Paper White", "أبيض ورقي");
         put("MixerFailed", "Could not generate the theme file. Please try again.", "ما قدرنا نولّد ملف الثيم، جرّب مرة ثانية.");
         put("MixerHeader", "Compose your theme by feel", "كوّن ثيمك على ذوقك");
-        put("MixerHubTitle", "Theme Mixer (MeeroX)", "صانع الثيمات (آراس كرام)");
+        put("MixerHubTitle", "Theme Mixer (MeeroX)", "صانع الثيمات (ميرو)");
         put("MixerInBubble", "Incoming bubble", "فقاعة الطرف الثاني");
         put("MixerInBubbleBlack", "Pure AMOLED black", "أسود AMOLED خالص");
         put("MixerInBubbleFollow", "Follow background style", "يتبع نمط الخلفية");
@@ -384,7 +378,7 @@ public final class MeeroStrings {
         put("SmartFolderUnreadChats", "Unread chats", "محادثات غير مقروءة");
         put("SmartFolderUnreadChatsRule", "Rule: contacts + non-contacts + groups with unread", "القاعدة: جهات اتصال + غير معروفين + مجموعات بها غير مقروء");
         put("SmartFoldersHeader", "One-tap folders, built from rules", "مجلدات بلمسة وحدة، مبنية بقواعد");
-        put("SmartFoldersHubTitle", "Smart Folders (MeeroX)", "المجلدات الذكية (آراس كرام)");
+        put("SmartFoldersHubTitle", "Smart Folders (MeeroX)", "المجلدات الذكية (ميرو)");
         put("SmartFoldersInfo", "Each preset creates a real synced Telegram folder composed of rules (type, unread, muted). It appears in your chats list immediately, syncs to every device, and can be edited or removed from Telegram's regular Folders settings. Count-based rules (e.g. \"unread more than 5\") cannot live in the server engine, so they are approximated by \"unread\".", "كل قالب ينشئ مجلد تيليجرام حقيقي متزامن مركّب من قواعد (النوع، غير المقروء، المكتوم). يظهر بقائمة محادثاتك فوراً، يتزامن لكل أجهزتك، وتقدر تعدله أو تحذفه من إعدادات «المجلدات» الرسمية. القواعد العددية (مثلاً «غير مقروء أكثر من 5») ما يدعمها محرك السيرفر، فاستبدلناها بـ«غير مقروء».");
         put("SmartFoldersTitle", "Smart Folders", "المجلدات الذكية");
         put("StyleIos", "iOS", "آي أو إس");
@@ -413,8 +407,8 @@ public final class MeeroStrings {
         put("meeroFlexWidth", "Flexible menu width", "عرض مرن للقوائم");
         put("meeroGhostSwipeRead", "Ghost read by swipe", "قراءة شبحية بالسحب");
         put("meeroGlassBorders", "Glass edges", "حدود زجاجية");
-        put("meeroGlassSettings", "Meero glass design", "تصميم آراس الزجاجي");
-        put("meeroGlassSwitches", "Meero glass switches", "مفاتيح آراس الزجاجية");
+        put("meeroGlassSettings", "Meero glass design", "تصميم ميرو الزجاجي");
+        put("meeroGlassSwitches", "Meero glass switches", "مفاتيح ميرو الزجاجية");
         put("meeroIosAlerts", "iOS dialog rules", "فواصل الحوارات مثل الآيفون");
         put("meeroIosAnim", "iOS message animation", "أنميشن الرسائل بنمط iOS");
         put("meeroIosCall", "iOS call buttons", "أزرار المكالمة مثل الآيفون");
@@ -500,35 +494,44 @@ public final class MeeroStrings {
     }
 
     private static void put(String key, String en, String ar) {
-        MAP.put(key, new String[]{en, ar});
+        STRINGS.put(key, new String[]{en, ar});
     }
 
     private static boolean isArabic() {
         try {
-            final Locale l = org.telegram.messenger.ApplicationLoader
-                    .applicationContext.getResources().getConfiguration().locale;
-            return l != null && "ar".equals(l.getLanguage());
+            return "ar".equals(Locale.getDefault().getLanguage());
         } catch (Throwable t) {
             return false;
         }
     }
 
-    /** Drop-in for LocaleController.getString(R.string.X) / getString(R.string.X). */
-    public static String s(String key) {
-        final String[] v = MAP.get(key);
-        if (v == null) {
-            return key;
-        }
-        return isArabic() && v[1] != null ? v[1] : (v[0] != null ? v[0] : v[1]);
+    public static String get(String key) {
+        String[] v = STRINGS.get(key);
+        if (v == null) return key;
+        return isArabic() && v[1] != null && !v[1].isEmpty() ? v[1] : v[0];
     }
 
-    /** Drop-in for getString(R.string.X, ...) / LocaleController.formatString(R.string.X, ...). */
+    public static String s(String key) {
+        return get(key);
+    }
+
+    public static String s(int id) {
+        return String.valueOf(id);
+    }
+
+    public static String title(String key) {
+        return get(key);
+    }
+
     public static String f(String key, Object... args) {
-        final String raw = s(key);
         try {
-            return String.format(raw, args);
+            return String.format(get(key), args);
         } catch (Throwable t) {
-            return raw;
+            return get(key);
         }
+    }
+
+    public static String f(int id, Object... args) {
+        return f(String.valueOf(id), args);
     }
 }
