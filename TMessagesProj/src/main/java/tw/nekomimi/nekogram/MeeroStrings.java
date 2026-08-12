@@ -361,7 +361,7 @@ public final class MeeroStrings {
         put("MixerBgPaper", "Paper White", "أبيض ورقي");
         put("MixerFailed", "Could not generate the theme file. Please try again.", "ما قدرنا نولّد ملف الثيم، جرّب مرة ثانية.");
         put("MixerHeader", "Compose your theme by feel", "كوّن ثيمك على ذوقك");
-        put("MixerHubTitle", "Theme Mixer (MeeroX)", "صانع الثيمات (ميرو)");
+        put("MixerHubTitle", "Theme Mixer (MeeroX)", "صانع الثيمات (آراس كرام)");
         put("MixerInBubble", "Incoming bubble", "فقاعة الطرف الثاني");
         put("MixerInBubbleBlack", "Pure AMOLED black", "أسود AMOLED خالص");
         put("MixerInBubbleFollow", "Follow background style", "يتبع نمط الخلفية");
@@ -384,7 +384,7 @@ public final class MeeroStrings {
         put("SmartFolderUnreadChats", "Unread chats", "محادثات غير مقروءة");
         put("SmartFolderUnreadChatsRule", "Rule: contacts + non-contacts + groups with unread", "القاعدة: جهات اتصال + غير معروفين + مجموعات بها غير مقروء");
         put("SmartFoldersHeader", "One-tap folders, built from rules", "مجلدات بلمسة وحدة، مبنية بقواعد");
-        put("SmartFoldersHubTitle", "Smart Folders (MeeroX)", "المجلدات الذكية (ميرو)");
+        put("SmartFoldersHubTitle", "Smart Folders (MeeroX)", "المجلدات الذكية (آراس كرام)");
         put("SmartFoldersInfo", "Each preset creates a real synced Telegram folder composed of rules (type, unread, muted). It appears in your chats list immediately, syncs to every device, and can be edited or removed from Telegram's regular Folders settings. Count-based rules (e.g. \"unread more than 5\") cannot live in the server engine, so they are approximated by \"unread\".", "كل قالب ينشئ مجلد تيليجرام حقيقي متزامن مركّب من قواعد (النوع، غير المقروء، المكتوم). يظهر بقائمة محادثاتك فوراً، يتزامن لكل أجهزتك، وتقدر تعدله أو تحذفه من إعدادات «المجلدات» الرسمية. القواعد العددية (مثلاً «غير مقروء أكثر من 5») ما يدعمها محرك السيرفر، فاستبدلناها بـ«غير مقروء».");
         put("SmartFoldersTitle", "Smart Folders", "المجلدات الذكية");
         put("StyleIos", "iOS", "آي أو إس");
@@ -413,8 +413,8 @@ public final class MeeroStrings {
         put("meeroFlexWidth", "Flexible menu width", "عرض مرن للقوائم");
         put("meeroGhostSwipeRead", "Ghost read by swipe", "قراءة شبحية بالسحب");
         put("meeroGlassBorders", "Glass edges", "حدود زجاجية");
-        put("meeroGlassSettings", "Meero glass design", "تصميم ميرو الزجاجي");
-        put("meeroGlassSwitches", "Meero glass switches", "مفاتيح ميرو الزجاجية");
+        put("meeroGlassSettings", "Meero glass design", "تصميم آراس الزجاجي");
+        put("meeroGlassSwitches", "Meero glass switches", "مفاتيح آراس الزجاجية");
         put("meeroIosAlerts", "iOS dialog rules", "فواصل الحوارات مثل الآيفون");
         put("meeroIosAnim", "iOS message animation", "أنميشن الرسائل بنمط iOS");
         put("meeroIosCall", "iOS call buttons", "أزرار المكالمة مثل الآيفون");
