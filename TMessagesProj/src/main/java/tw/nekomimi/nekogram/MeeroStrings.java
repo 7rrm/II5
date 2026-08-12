@@ -4,20 +4,26 @@ import java.util.HashMap;
 import java.util.Locale;
 
 /**
- * MeeroX - جميع النصوص المفكوكة
- * هذه النسخة خالية من التشفير وتعمل مباشرة
+ * MeeroX v171 - every MeeroX feature string (names, descriptions,
+ * dialogs...) relocated OUT of resources.arsc INTO the encrypted DEX
+ * vault (this class ships only inside assets/meero_vault/dex.enc).
+ *
+ * Before v171 these 455 strings sat in res values dirs (values +
+ * values-ar)/strings_meerox.xml, readable by any static-analysis /
+ * unpack tool via the resource table. Now the resource dump shows
+ * NOTHING about MeeroX features.
+ *
+ * Generated from strings_meerox.xml exactly (values preserved 1:1 with
+ * android unescaping applied) - do not edit by hand, regenerate.
  */
 public final class MeeroStrings {
 
     private MeeroStrings() {
     }
 
-    // ============================================================
-    // جميع النصوص - المفتاح -> [إنجليزي, عربي]
-    // ============================================================
-    
-    private static final HashMap<String, String[]> STRINGS = new HashMap<>();
-    
+    /** key -> { english, arabic (nullable) } */
+    private static final HashMap<String, String[]> MAP = new HashMap<String, String[]>();
+
     static {
         put("BackAnimationIos", "iOS", "آي أو إس");
         put("JanitorDays14", "14 days", "14 يوم");
@@ -26,8 +32,8 @@ public final class MeeroStrings {
         put("JanitorModeDaily", "Daily", "يومي");
         put("JanitorModeLimit", "Only when over the limit", "فقط عند تجاوز الحد");
         put("JanitorModeWeekly", "Weekly", "أسبوعي");
-        put("JanitorReport", "Storage janitor freed %251$s of cache", "حارس التخزين حرّر %251$s من الكاش");
-        put("MeeroAmoledBubblesInfo", "On dark themes with a pure-black background, incoming bubbles turn true #000000 black for contrast and battery saving. OFF restores the theme colors.", "مع الثيمات الداكنة ذات الخلفية السوداء الخالصة، فقاعات الطرف الثاني تصير سوداء 100%25 (#000000) للتباين وتوفير البطارية. الإطفاء يرجّع ألوان الثيم.");
+        put("JanitorReport", "Storage janitor freed %1$s of cache", "حارس التخزين حرّر %1$s من الكاش");
+        put("MeeroAmoledBubblesInfo", "On dark themes with a pure-black background, incoming bubbles turn true #000000 black for contrast and battery saving. OFF restores the theme colors.", "مع الثيمات الداكنة ذات الخلفية السوداء الخالصة، فقاعات الطرف الثاني تصير سوداء 100% (#000000) للتباين وتوفير البطارية. الإطفاء يرجّع ألوان الثيم.");
         put("MeeroAmoledStrokeInfo", "Draws a barely-there 1px outline around pure-black incoming bubbles so their borders stay visible on true-black backgrounds. Works only while AMOLED black bubbles is on.", "يرسم خطاً خافتاً جداً بسماكة 1px حول فقاعات الطرف الثاني السوداء الخالصة حتى تبقى حدودها واضحة على الخلفية السوداء الحقيقية. يشتغل فقط إذا خيار «فقاعات سوداء AMOLED» شغّال.");
         put("MeeroAppEdition", "App edition", "إصدار التطبيق");
         put("MeeroAuditChat", "Locked chat", "محادثة مقفلة");
@@ -46,7 +52,7 @@ public final class MeeroStrings {
         put("MeeroAutoReplyText", "Reply text", "نص الرد");
         put("MeeroAutoReplyTextHint", "Write {name} and it becomes the person's name", "اكتب {name} وتنحط اسم الشخص مكانها");
         put("MeeroAutoReplyTitle", "Auto-reply", "الرد التلقائي");
-        put("MeeroAutoReplyUsage", "How it works: automatically sends one reply to incoming messages in private chats while you are busy, with a per-chat cooldown so it never becomes spam. Off by default - and while off, nothing is ever sent, exactly the stock behavior.%0A%0A⏰ Time window: when enabled, replies are only sent within these hours on the chosen days. If the start is later than the end, the window crosses midnight (e.g. 23:00-08:00). Outside the window (or on unchecked days) nothing is sent. Off = replies around the clock, exactly like before. The optional night text replaces the general reply text while the window is active.%0A%0A✅ Guarantees: private chats only - groups, channels, bots and your Saved Messages are always excluded. Never replies while you are inside that same chat with the screen on. Works in the background after you leave the app (a device \"Force stop\" kills everything - that is Android law). With Ghost Mode: the reply is sent without any read receipt, so the other side's read ticks stay unchanged. The cooldown is kept in memory and resets when the app restarts.", "شلون تشتغل: يرد تلقائيًا برسالة واحدة على الرسائل الجديدة في الدردشات الخاصة وأنت مشغول، مع فاصل زمني لكل دردشة حتى لا يتحول لسبام. مطفي افتراضيًا — وعند إطفائه ما ينرسل أي شيء، سلوك رسمي تمامًا.%0A%0A⏰ النافذة الزمنية: عند التفعيل يُرسل الرد فقط داخل هاي الساعات وبالأيام المختارة. إذا البداية بعد النهاية فالنافذة تعبر منتصف الليل (مثال 23:00–08:00). خارج النافذة أو بيوم غير محدد ما ينرسل رد. مطفية = يرد على مدار الساعة مثل السابق. «النص الليلي» الاختياري يستبدل نص الرد العادي داخل النافذة فقط.%0A%0A✅ الضمانات: الدردشات الخاصة فقط — القروبات والقنوات والبوتات ورسائلك المحفوظة مستبعدة دائمًا. لا يرد وأنت داخل نفس الدردشة والشاشة شغالة. يعمل بالخلفية ولو خرجت من التطبيق («الإيقاف الإجباري» من إعدادات الجهاز يطفي كل شيء — قانون أندرويد). مع وضع الشبح: الرد ينرسل بدون إيصال قراءة، فصحات القراءة عند الطرف الثاني ما تتغير. الفاصل الزمني ينحفظ بالذاكرة وينصفّر عند إعادة تشغيل التطبيق.");
+        put("MeeroAutoReplyUsage", "How it works: automatically sends one reply to incoming messages in private chats while you are busy, with a per-chat cooldown so it never becomes spam. Off by default - and while off, nothing is ever sent, exactly the stock behavior.\n\n⏰ Time window: when enabled, replies are only sent within these hours on the chosen days. If the start is later than the end, the window crosses midnight (e.g. 23:00-08:00). Outside the window (or on unchecked days) nothing is sent. Off = replies around the clock, exactly like before. The optional night text replaces the general reply text while the window is active.\n\n✅ Guarantees: private chats only - groups, channels, bots and your Saved Messages are always excluded. Never replies while you are inside that same chat with the screen on. Works in the background after you leave the app (a device \"Force stop\" kills everything - that is Android law). With Ghost Mode: the reply is sent without any read receipt, so the other side's read ticks stay unchanged. The cooldown is kept in memory and resets when the app restarts.", "شلون تشتغل: يرد تلقائيًا برسالة واحدة على الرسائل الجديدة في الدردشات الخاصة وأنت مشغول، مع فاصل زمني لكل دردشة حتى لا يتحول لسبام. مطفي افتراضيًا — وعند إطفائه ما ينرسل أي شيء، سلوك رسمي تمامًا.\n\n⏰ النافذة الزمنية: عند التفعيل يُرسل الرد فقط داخل هاي الساعات وبالأيام المختارة. إذا البداية بعد النهاية فالنافذة تعبر منتصف الليل (مثال 23:00–08:00). خارج النافذة أو بيوم غير محدد ما ينرسل رد. مطفية = يرد على مدار الساعة مثل السابق. «النص الليلي» الاختياري يستبدل نص الرد العادي داخل النافذة فقط.\n\n✅ الضمانات: الدردشات الخاصة فقط — القروبات والقنوات والبوتات ورسائلك المحفوظة مستبعدة دائمًا. لا يرد وأنت داخل نفس الدردشة والشاشة شغالة. يعمل بالخلفية ولو خرجت من التطبيق («الإيقاف الإجباري» من إعدادات الجهاز يطفي كل شيء — قانون أندرويد). مع وضع الشبح: الرد ينرسل بدون إيصال قراءة، فصحات القراءة عند الطرف الثاني ما تتغير. الفاصل الزمني ينحفظ بالذاكرة وينصفّر عند إعادة تشغيل التطبيق.");
         put("MeeroAutoReplyWindowDays", "Window days", "أيام النافذة");
         put("MeeroAutoReplyWindowDaysAll", "Every day", "كل الأيام");
         put("MeeroAutoReplyWindowDaysNone", "No days - window never runs", "بدون أيام (النافذة لا تعمل)");
@@ -79,7 +85,7 @@ public final class MeeroStrings {
         put("MeeroChatLockMethodSystem", "Device biometric / device lock", "بصمة / قفل الجهاز");
         put("MeeroChatLockNewMessage", "New message in a locked chat", "وصلتك رسالة جديدة بمحادثة مقفلة");
         put("MeeroChatLockRemove", "Remove lock", "فك القفل");
-        put("MeeroChatLockRemoveConfirm", "Unlock %251$s and restore its notifications?", "تفك القفل عن %251$s وترجّع إشعاراتها؟");
+        put("MeeroChatLockRemoveConfirm", "Unlock %1$s and restore its notifications?", "تفك القفل عن %1$s وترجّع إشعاراتها؟");
         put("MeeroChatLockRowDetail", "Locked - fingerprint needed on entry", "مقفلة - البصمة مطلوبة عند الدخول");
         put("MeeroChatLockSetCode", "Set your code", "عيّن الرمز");
         put("MeeroChatLockSetCodeHint", "Enter an 8-digit code (numbers only)", "اكتب رمز مكوّن من 8 أرقام (أرقام فقط)");
@@ -135,7 +141,7 @@ public final class MeeroStrings {
         put("MeeroHeroMsg3", "Wooow fire 🔥", "وااو ناريي 🔥");
         put("MeeroHiddenChats", "Hidden chats", "المحادثات المخفية");
         put("MeeroHunterClearConfirm", "Delete the whole log?", "تمسح السجل كله؟");
-        put("MeeroHunterDeleteConfirm", "Deletes %251$d selected items from the catcher log on this device only. Your chats are not affected.", "راح ينحذف %251$d عنصر محدد من سجل الصائد على جهازك فقط. محادثاتك ما تتأثر.");
+        put("MeeroHunterDeleteConfirm", "Deletes %1$d selected items from the catcher log on this device only. Your chats are not affected.", "راح ينحذف %1$d عنصر محدد من سجل الصائد على جهازك فقط. محادثاتك ما تتأثر.");
         put("MeeroHunterDeletedMsg", "deleted a message", "حذف رسالة");
         put("MeeroHunterEditedMsg", "edited a message", "عدّل رسالة");
         put("MeeroHunterEmpty", "Nothing caught yet", "لا شيء ملتقط بعد");
@@ -145,7 +151,7 @@ public final class MeeroStrings {
         put("MeeroHunterMedia", "Media 📎", "وسائط 📎");
         put("MeeroHunterNothingSelected", "Nothing selected. Long-press an entry, tap the ones you want, then delete.", "ماكو عناصر محددة. اضغط مطولاً على عنصر، حدد اللي تريده، بعدين احذف.");
         put("MeeroHunterSelectAll", "Select all", "تحديد الكل");
-        put("MeeroHunterSelectedCount", "Selected: %251$d", "المحدد: %251$d");
+        put("MeeroHunterSelectedCount", "Selected: %1$d", "المحدد: %1$d");
         put("MeeroHunterSomeone", "Someone", "شخص ما");
         put("MeeroHunterTitle", "Delete catcher", "صائد الحاذف");
         put("MeeroIconAlt", "MeeroX (alt)", "MeeroX (بديل)");
@@ -222,7 +228,7 @@ public final class MeeroStrings {
         put("MeeroPoolWordMany", "texts", "نصوص");
         put("MeeroPoolWordOne", "text", "نص");
         put("MeeroPrivacyAccept", "Accept and continue", "موافق ومتابعة");
-        put("MeeroPrivacyBody", "MeeroX is an unofficial Telegram client.%0A%0A• MeeroX does not collect, store or transmit your personal data to any third party.%0A• Your messages travel only between your device and Telegram's servers, exactly as with the official app.%0A• Settings, fonts and preferences are stored locally on your device.%0A• The source code is open and can be reviewed at any time.%0A%0ABy continuing you agree to use MeeroX at your own responsibility, and to respect Telegram's Terms of Service.", "ميرو إكس تطبيق غير رسمي لتيليجرام.%0A%0A• لا يجمع ميرو إكس أي بيانات شخصية ولا يرسلها لأي طرف ثالث.%0A• رسائلك تنتقل بين جهازك وخوادم تيليجرام فقط، تماماً كالتطبيق الرسمي.%0A• الإعدادات والخطوط والتفضيلات تُحفظ محلياً على جهازك.%0A• الكود المصدري مفتوح ويمكن مراجعته في أي وقت.%0A%0Aبالمتابعة فإنك توافق على استخدام ميرو إكس على مسؤوليتك الخاصة، وعلى احترام شروط خدمة تيليجرام.");
+        put("MeeroPrivacyBody", "MeeroX is an unofficial Telegram client.\n\n• MeeroX does not collect, store or transmit your personal data to any third party.\n• Your messages travel only between your device and Telegram's servers, exactly as with the official app.\n• Settings, fonts and preferences are stored locally on your device.\n• The source code is open and can be reviewed at any time.\n\nBy continuing you agree to use MeeroX at your own responsibility, and to respect Telegram's Terms of Service.", "ميرو إكس تطبيق غير رسمي لتيليجرام.\n\n• لا يجمع ميرو إكس أي بيانات شخصية ولا يرسلها لأي طرف ثالث.\n• رسائلك تنتقل بين جهازك وخوادم تيليجرام فقط، تماماً كالتطبيق الرسمي.\n• الإعدادات والخطوط والتفضيلات تُحفظ محلياً على جهازك.\n• الكود المصدري مفتوح ويمكن مراجعته في أي وقت.\n\nبالمتابعة فإنك توافق على استخدام ميرو إكس على مسؤوليتك الخاصة، وعلى احترام شروط خدمة تيليجرام.");
         put("MeeroPrivacyTitle", "Privacy Policy", "سياسة الخصوصية");
         put("MeeroRandomEmoji", "Random emoji at the end 🎲", "إيموجي عشوائي بالنهاية 🎲");
         put("MeeroReadAllChats", "Read all chats", "قراءة جميع الدردشات");
@@ -252,11 +258,11 @@ public final class MeeroStrings {
         put("MeeroSettingsTitle", "MeeroX", "MeeroX");
         put("MeeroSigContinue", "Continue at my own risk", "الاستمرار على مسؤوليتي");
         put("MeeroSigExit", "Exit now", "خروج فوري");
-        put("MeeroSigWarningText", "This copy's signature does NOT match the official MeeroX fingerprint. It may be a fake or tampered build that can steal your account.%0A%0AThis copy:%0A%251$s%0A%0AOfficial fingerprint:%0A%252$s%0A%0AInstall MeeroX only from the developer's official channel.", "توقيع هذه النسخة لا يطابق بصمة MeeroX الرسمية. يمكن أن تكون نسخة مقرصنة أو معدّلة تسرق حسابك وبياناتك.%0A%0Aبصمة هذه النسخة:%0A%251$s%0A%0Aالبصمة الرسمية:%0A%252$s%0A%0Aحمّل MeeroX فقط من قناة المطور الرسمية.");
+        put("MeeroSigWarningText", "This copy's signature does NOT match the official MeeroX fingerprint. It may be a fake or tampered build that can steal your account.\n\nThis copy:\n%1$s\n\nOfficial fingerprint:\n%2$s\n\nInstall MeeroX only from the developer's official channel.", "توقيع هذه النسخة لا يطابق بصمة MeeroX الرسمية. يمكن أن تكون نسخة مقرصنة أو معدّلة تسرق حسابك وبياناتك.\n\nبصمة هذه النسخة:\n%1$s\n\nالبصمة الرسمية:\n%2$s\n\nحمّل MeeroX فقط من قناة المطور الرسمية.");
         put("MeeroSigWarningTitle", "⚠️ Warning: unofficial copy", "⚠️ تحذير: نسخة غير رسمية");
         put("MeeroSmoothPassInfo", "Pre-warms the first popup menu, the first chat you open and the first chat-list swipe after launching the app. OFF restores the exact previous start-up.", "يسخّن مسبقاً أول قائمة منبثقة وأول دردشة تفتحها وأول سحبة بقائمة الدردشات بعد تشغيل التطبيق. الإطفاء يرجّع التشغيل مثل السابق حرفياً.");
         put("MeeroStatsChartInfo", "Bars show your outgoing messages by hour of day (device local time). The tallest bar carries its value on top.", "الأعمدة تعرض رسائلك الصادرة موزعة على ساعات اليوم (بتوقيت جهازك)، وأعلى عمود مكتوبة قيمته فوقه.");
-        put("MeeroStatsDryDays", "%251$d days without a reply", "%251$d يوم بلا رد");
+        put("MeeroStatsDryDays", "%1$d days without a reply", "%1$d يوم بلا رد");
         put("MeeroStatsDryHeader", "Quiet chats", "المحادثات الجافة");
         put("MeeroStatsDryInfo", "Private chats whose last message came from their side - you have not replied yet.", "محادثات خاصة آخر رسالة بيها من طرفهم وأنت بعدك ما رديت عليها.");
         put("MeeroStatsDryToday", "Today", "اليوم");
@@ -290,13 +296,13 @@ public final class MeeroStrings {
         put("MeeroUsageGuide", "How to use", "طريقة الاستخدام");
         put("MeeroUsageGuideGotIt", "Got it", "فهمت");
         put("MeeroVaultBrandSub", "Hidden from everywhere - they only live here", "مخفية عن كل مكان - ما تعيش غير هنا");
-        put("MeeroVaultCount", "%251$d hidden chats", "%251$d محادثة مخفية");
+        put("MeeroVaultCount", "%1$d hidden chats", "%1$d محادثة مخفية");
         put("MeeroVaultEmpty", "No hidden chats.", "ماكو محادثات مخفية.");
         put("MeeroVaultEmptyHint", "Lock a chat from the Chat lock section and it shows up here", "اقفل أي محادثة من قسم «قفل المحادثات» وهي ترجع تظهر هنا");
         put("MeeroVaultGateHint", "Unlock to see your hidden chats", "افتح حتى تشوف محادثاتك المخفية");
         put("MeeroVaultInfo", "One unlock per session, instant relock on exit. Vault access: long-press the Chats tab > \"Hidden chats\".", "فتح وحدة للجلسة والخروج ينقفل فورًا. الوصول: ضغطة مطولة على تبويب «المحادثات» ← «المحادثات المخفية».");
         put("MeeroVaultTitle", "Hidden chats", "المحادثات المخفية");
-        put("MeeroVaultUnread", "%251$d unread", "%251$d غير مقروءة");
+        put("MeeroVaultUnread", "%1$d unread", "%1$d غير مقروءة");
         put("MeeroVersion", "Version", "الإصدار");
         put("MeeroWatchAdd", "Watch someone", "إضافة شخص للمراقبة");
         put("MeeroWatchAddByHandle", "Enter username or ID", "إدخال يوزر أو أيدي");
@@ -494,44 +500,35 @@ public final class MeeroStrings {
     }
 
     private static void put(String key, String en, String ar) {
-        STRINGS.put(key, new String[]{en, ar});
+        MAP.put(key, new String[]{en, ar});
     }
 
     private static boolean isArabic() {
         try {
-            return "ar".equals(Locale.getDefault().getLanguage());
+            final Locale l = org.telegram.messenger.ApplicationLoader
+                    .applicationContext.getResources().getConfiguration().locale;
+            return l != null && "ar".equals(l.getLanguage());
         } catch (Throwable t) {
             return false;
         }
     }
 
-    public static String get(String key) {
-        String[] v = STRINGS.get(key);
-        if (v == null) return key;
-        return isArabic() && v[1] != null && !v[1].isEmpty() ? v[1] : v[0];
-    }
-
+    /** Drop-in for LocaleController.getString(R.string.X) / getString(R.string.X). */
     public static String s(String key) {
-        return get(key);
-    }
-
-    public static String s(int id) {
-        return String.valueOf(id);
-    }
-
-    public static String title(String key) {
-        return get(key);
-    }
-
-    public static String f(String key, Object... args) {
-        try {
-            return String.format(get(key), args);
-        } catch (Throwable t) {
-            return get(key);
+        final String[] v = MAP.get(key);
+        if (v == null) {
+            return key;
         }
+        return isArabic() && v[1] != null ? v[1] : (v[0] != null ? v[0] : v[1]);
     }
 
-    public static String f(int id, Object... args) {
-        return f(String.valueOf(id), args);
+    /** Drop-in for getString(R.string.X, ...) / LocaleController.formatString(R.string.X, ...). */
+    public static String f(String key, Object... args) {
+        final String raw = s(key);
+        try {
+            return String.format(raw, args);
+        } catch (Throwable t) {
+            return raw;
+        }
     }
 }
